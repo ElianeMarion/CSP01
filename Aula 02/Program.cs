@@ -202,8 +202,85 @@ namespace Aula_02
             Bem vindo ao sistema de doação nome, senão usuário/senha inválido
              3 – Sair (Obrigada(o) por utilizar nosso sistema!
              */
+			//solução com IF ENCADEADO
+			string nome, telefone, email, senha, apelido;
+			Console.WriteLine("FIAP Donation System!");
+
+			//Criar um menu
+			Console.WriteLine("\n 1 - Registrar um novo usuário\n 2 - Logar\n 3 - Sair\n Digite a opção desejada: ");
+			int opcao = Convert.ToInt32(Console.ReadLine());
+
+			if (opcao == 1)  //registrar um novo usuario
+			{
+				Console.WriteLine("Digite seu nome: ");
+				nome = Console.ReadLine();
+				Console.WriteLine("Digite seu telefone: ");
+				telefone = Console.ReadLine();
+				Console.WriteLine("Digite seu email: ");
+				email = Console.ReadLine();
+				Console.WriteLine("Digite sua senha: ");
+				senha = Console.ReadLine();
+				Console.WriteLine("Digite seu apelido: ");
+				apelido = Console.ReadLine();
+			}
+			else if (opcao == 2)//logar
+			{
+				//email cadastrado = "admin@fiap.com" senha cadastrada = "admin123
+				Console.WriteLine("Digite seu email: ");
+				string emailParaLogin = Console.ReadLine();
+				Console.WriteLine("Digite sua senha: ");
+				string senhaParaLogin = Console.ReadLine();
+				if (emailParaLogin.Equals("admin@fiap.com.br") && senhaParaLogin.Equals("admin123"))
+					Console.WriteLine("Bem vindo ao sistema " + emailParaLogin);
+				else
+					Console.WriteLine("Usuario e/ou senha inválidos");
+
+			}
+			else
+			{
+				Console.WriteLine("Obrigada(o) por utilizar nosso sistema!");
+			}
+			//Solução com SWITCH()
+			switch (opcao)
+			{
+				case 1:
+					Console.WriteLine("Digite seu nome: ");
+					nome = Console.ReadLine();
+					Console.WriteLine("Digite seu telefone: ");
+					telefone = Console.ReadLine();
+					Console.WriteLine("Digite seu email: ");
+					email = Console.ReadLine();
+					Console.WriteLine("Digite sua senha: ");
+					senha = Console.ReadLine();
+					Console.WriteLine("Digite seu apelido: ");
+					apelido = Console.ReadLine();
+					break;
+				case 2:
+					//email cadastrado = "admin@fiap.com" senha cadastrada = "admin123"
+					Console.WriteLine("Digite seu email: ");
+					string emailParaLogin = Console.ReadLine();
+					Console.WriteLine("Digite sua senha: ");
+					string senhaParaLogin = Console.ReadLine();
+					if (emailParaLogin.Equals("admin@fiap.com.br") && senhaParaLogin.Equals("admin123"))
+						Console.WriteLine("Bem vindo ao sistema " + emailParaLogin);
+					else
+						Console.WriteLine("Usuario e/ou senha inválidos");
+					break;
+				case 3:
+					Console.WriteLine("Obrigada(o) por utilizar nosso sistema!");
+					break;
+				default:
+					Console.WriteLine("Opção inválida");
+				break;
+
+			}
 
 
+			//Operador ternário
+			//condicao ? tratamento_condicaoV : tratamentoF;
+			double valorCompra = 120;
+			double desconto = valorCompra > 200 ? 10 : 0;
+			Console.WriteLine($"Desconto aplicado: R$ {desconto}");
 
 		}
 	}
